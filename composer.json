@@ -1,0 +1,32 @@
+{
+	"name": "armenio/armenio-date",
+	"description": "I18n Aux library",
+	"type": "library",
+	"keywords": [
+		"date",
+		"time",
+		"datetime",
+		"helper",
+		"zf2",
+		"armenio"
+	],
+	"homepage": "https://github.com/armenio/armenio-date",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Rafael Armênio",
+			"email": "rafael.armenio@gmail.com"
+		}
+	],
+	"require": {
+		"zendframework/zendframework": "2.*"
+	},
+	"autoload": {
+		"psr-0": {
+			"Armenio\\I18n\\": "src"
+		},
+		"classmap": [
+			"Module.php"
+		]
+	}
+}
