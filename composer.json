@@ -22,11 +22,8 @@
 		"zendframework/zendframework": "2.*"
 	},
 	"autoload": {
-		"psr-0": {
-			"Armenio\\I18n\\": "src"
-		},
-		"classmap": [
-			"Module.php"
-		]
+		"psr-4": {
+			"Armenio\\I18n\\": "src/"
+		}
 	}
 }
