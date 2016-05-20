@@ -3,14 +3,12 @@
 	"description": "I18n Aux library",
 	"type": "library",
 	"keywords": [
-		"date",
-		"time",
 		"datetime",
 		"helper",
 		"zf2",
 		"armenio"
 	],
-	"homepage": "https://github.com/armenio/armenio-date",
+	"homepage": "https://github.com/armenio/armenio-i18n",
 	"license": "MIT",
 	"authors": [
 		{
