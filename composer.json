@@ -3,6 +3,8 @@
 	"description": "I18n Aux library",
 	"type": "library",
 	"keywords": [
+		"date",
+		"time",
 		"datetime",
 		"helper",
 		"zf2",
