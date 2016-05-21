@@ -1,6 +1,6 @@
 {
-	"name": "armenio/armenio-i18n",
-	"description": "I18n Aux library",
+	"name": "armenio/armenio-zf2-i18n-filter-datetime",
+	"description": "I18n Filter DateTime Module for Zend Framework 2",
 	"type": "library",
 	"keywords": [
 		"date",
@@ -10,7 +10,7 @@
 		"zf2",
 		"armenio"
 	],
-	"homepage": "https://github.com/armenio/armenio-i18n",
+	"homepage": "https://github.com/armenio/armenio-zf2-i18n-filter-datetime",
 	"license": "MIT",
 	"authors": [
 		{
@@ -23,7 +23,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Armenio\\I18n\\": "src/"
+			"Armenio\\I18nFilterDateTime\\": "src/"
 		}
 	}
 }

@@ -5,7 +5,7 @@
  * @link http://github.com/armenio for the source repository
  */
  
-namespace Armenio\I18n\Filter;
+namespace Armenio\I18nFilterDateTime\Filter;
 
 use Locale;
 use IntlDateFormatter;
