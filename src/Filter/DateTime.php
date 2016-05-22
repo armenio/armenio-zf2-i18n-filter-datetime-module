@@ -219,7 +219,7 @@ class DateTime extends AbstractFilter
 		}
 
 		$dateType = $this->getDateType();
-		$timeType = $this->getDateType();
+		$timeType = $this->getTimeType();
 		$locale = $this->getLocale();
 		$timezone = $this->getTimezone();
 		$calendar = $this->getCalendar();
@@ -238,24 +238,26 @@ class DateTime extends AbstractFilter
 				);
 
 				$this->formatters[$formatterId]->setLenient(false);
-
-				$this->setTimezone($this->formatters[$formatterId]->getTimezone()->getID());
-				$this->setCalendar($this->formatters[$formatterId]->getCalendar());
-
-				$timestamp = $this->formatters[$formatterId]->parse($value);
-
-				$this->formatters[$formatterId]->setPattern($this->getPattern());
-
-				$value = $this->formatters[$formatterId]->format($timestamp);
-
-				if (intl_is_failure($this->formatters[$formatterId]->getErrorCode())) {
-					throw new FilterException\InvalidArgumentException($this->formatters[$formatterId]->getErrorMessage());
-				}
 			} catch (IntlException $intlException) {
-				throw new FilterException\InvalidArgumentException($intlException->getMessage(), 0, $intlException);
+				// throw new FilterException\InvalidArgumentException($intlException->getMessage(), 0, $intlException);
+				return $value;
 			}
 		}
 
-		return $value;
+		$this->setTimezone($this->formatters[$formatterId]->getTimezone()->getID());
+		$this->setCalendar($this->formatters[$formatterId]->getCalendar());
+
+		$timestamp = $this->formatters[$formatterId]->parse($value);
+
+		$this->formatters[$formatterId]->setPattern($this->getPattern());
+
+		$formatted = $this->formatters[$formatterId]->format($timestamp);
+
+		if (intl_is_failure($this->formatters[$formatterId]->getErrorCode())) {
+			// throw new FilterException\InvalidArgumentException($this->formatters[$formatterId]->getErrorMessage());
+			return $value;
+		}
+
+		return $formatted;
 	}
 }
